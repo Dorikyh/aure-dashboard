@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import NotFoundPage from './components/Pages/NotFoundPage';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Login } from './components/Pages/Login';
 
 function App() {
   const [jwtToken, setJwtToken] = useState('');
@@ -58,6 +59,7 @@ function App() {
             <Route path="/status" element={<Status />} />
             <Route path="/commands" element={<Commands />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="/dashboard/profile"
               element={jwtToken ? <Profile userInfo={userInfo} /> : <Navigate to="/login" />}
