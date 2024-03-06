@@ -4,7 +4,7 @@ import "./Status.css";
 export const Status = () => {
   const [botStatus, setBotStatus] = useState("Loading...");
   const [apiStatus, setApiStatus] = useState("Loading...");
-  const [dashboardStatus, setDashboardStatus] = useState("Loading...");
+  const [dashboardStatus] = useState("Loading...");
 
   useEffect(() => {
     const fetchBotStatus = async () => {
