@@ -1,0 +1,42 @@
+/* Footer styles */
+footer {
+    background-color: #242424;
+    padding: 20px;
+    text-align: center;
+    color: #e2e2e2;
+    padding: 4em;
+}
+
+
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+
+
+.footer-links a {
+    color: #c1cfec;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+footer a {
+    color: #c1cfec;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
