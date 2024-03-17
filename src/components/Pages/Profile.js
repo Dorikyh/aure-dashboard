@@ -26,7 +26,7 @@ function Profile() {
       <main>
         {userInfo ? (
           <div>
-            <h2>Welcome, {userInfo.username}.</h2>
+            <h2>Welcome, {userInfo.username}!</h2>
             <p>Credits: {userInfo.credits}</p>
             {/* Agrega aquí más información del usuario según lo que devuelva la API */}
           </div>

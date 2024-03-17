@@ -18,25 +18,39 @@ footer {
 }
 
 
-
 .footer-links a {
     color: #c1cfec;
     margin-left: 25px;
     margin-right: 25px;
+    font-weight: 600;
+    transition: 0.2s;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #c1cfec;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    color: #a0a7b4;
 }
 
-
-
+.footer-links a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
 
 footer a {
     color: #c1cfec;
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
-}

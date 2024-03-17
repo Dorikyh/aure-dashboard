@@ -16,7 +16,7 @@ export const Dashboard = () => {
       <SideBar />
       <main>
         <div>
-          <h1>Hello world</h1>
+          <h2>Website in development</h2>
           {/* Agrega aquí más información del usuario según lo que devuelva la API */}
         </div>
       </main>
