@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Status.css";
+
 
 export const Status = () => {
-  const [botStatus, setBotStatus] = useState("Loading...");
-  const [apiStatus, setApiStatus] = useState("Loading...");
-  const [dashboardStatus] = useState("Loading...");
+  const [botStatus, setBotStatus] = useState("Loading");
+  const [apiStatus, setApiStatus] = useState("Loading");
+  const [dashboardStatus, setWebStatus] = useState("Loading");
 
   useEffect(() => {
     const fetchBotStatus = async () => {
@@ -24,7 +24,7 @@ export const Status = () => {
     const fetchApiStatus = async () => {
       try {
         // Aquí reemplaza la URL con la de tu API
-        const response = await fetch("URL_DE_TU_API");
+        const response = await fetch("https://api.kotone.tech");
         if (response.ok) {
           setApiStatus("Online");
         } else {
@@ -36,29 +36,45 @@ export const Status = () => {
       }
     };
 
+    const fetchWebStatus = async () => {
+      try {
+        // Aquí reemplaza la URL con la de tu API
+        const response = await fetch("https://www.kotone.tech");
+        if (response.ok) {
+          setWebStatus("Online");
+        } else {
+          setWebStatus("Offline");
+        }
+      } catch (error) {
+        console.error("Error fetching Website status:", error);
+        setWebStatus("Offline");
+      }
+    };
+
     // Llama a las funciones de solicitud al cargar el componente
     fetchBotStatus();
     fetchApiStatus();
+    fetchWebStatus();
   }, []);
 
   return (
-    <div>
-      <div className="infoMain">
-        <h1>Realtime Status</h1>
-        <p>Tecnical information about Kotone and realtime status.</p>
+    <div className="dark:bg-gray-900 py-10">
+      <div>
+        <h1 className="text-5xl sm:text-7xl font-semibold text-center dark:text-white p-12">Realtime Status</h1>
+        <p className="text-center dark:text-white mx-8">Tecnical information about Kotone in realtime status.</p>
       </div>
       <main>
-        <div className="card">
-          <h2>Bot Status</h2>
-          <p style={{ color: botStatus === "Online" ? "green" : "red" }}>{botStatus}</p>
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+          <h2 className="dark:text-white text-4xl font-semibold">Bot Status</h2>
+          <p className="text-3xl font-semibold" style={{ color: botStatus === "Online" ? "#77DD77" : "#ff6961" }}>{botStatus}</p>
         </div>
-        <div className="card">
-          <h2>API Status</h2>
-          <p style={{ color: apiStatus === "Online" ? "green" : "red" }}>{apiStatus}</p>
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+          <h2 className="dark:text-white text-4xl font-semibold">API Status</h2>
+          <p className="text-3xl font-semibold" style={{ color: apiStatus === "Online" ? "#77DD77" : "#ff6961" }}>{apiStatus}</p>
         </div>
-        <div className="card">
-          <h2>Dashboard Status</h2>
-          <p style={{ color: dashboardStatus === "Online" ? "green" : "red" }}>{dashboardStatus}</p>
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+          <h2 className="dark:text-white text-4xl font-semibold">Dashboard Status</h2>
+          <p className="text-3xl font-semibold" style={{ color: dashboardStatus === "Online" ? "#77DD77" : "#ff6961" }}>{dashboardStatus}</p>
         </div>
       </main>
     </div>
