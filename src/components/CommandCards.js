@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Cards.css";
 
 const CommandCards = () => {
   const [commands, setCommands] = useState([]);
@@ -23,24 +22,28 @@ const CommandCards = () => {
     setSearchQuery(event.target.value);
   };
 
-  // Filter commands based on search query
-  const filteredCommands = commands.filter((command) =>
-    command.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredCommands = Array.isArray(commands)
+    ? commands.filter((command) =>
+        command.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search commands"
-        value={searchQuery}
-        onChange={handleSearchInputChange}
-      />
-      <div className="cards-container">
+      <div className="flex justify-center">
+        <input
+          type="text"
+          placeholder="Search commands"
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+          className="font-semibold dark:text-black text-white rounded-md p-2 text-center px-12"
+        />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 m-4">
         {filteredCommands.map((command, index) => (
-          <div key={index} className="command-card">
-            <h3>/{command.name}</h3>
-            <p>{command.description}</p>
+          <div key={index} className="bg-gray-700 m-4 p-4 rounded-xl">
+            <h3 className="text-white sm:text-2xl font-semibold">/{command.name}</h3>
+            <p className="text-gray-300">{command.description}</p>
           </div>
         ))}
       </div>

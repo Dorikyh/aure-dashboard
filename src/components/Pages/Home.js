@@ -3,22 +3,29 @@ import React, { useState, useEffect } from "react";
 
 
 export const Home = () => {
-  const [timesUsed, setTimesUsed] = useState(0);
-  const [totalUsers, setTotalUsers] = useState(0);
-  const [totalServers, setTotalServers] = useState(0);
+  const [statusData, setStatusData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.kotone.tech/status/")
-      .then((response) => response.json())
-      .then((data) => {
-        setTimesUsed(data.used_commands);
-        setTotalUsers(data.users);
-        setTotalServers(data.servers);
-      })
-      .catch((error) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.kotone.tech/status");
+        if (response.ok) {
+          const data = await response.json();
+          setStatusData(data);
+        } else {
+          throw new Error("Failed to fetch data");
+        }
+      } catch (error) {
         console.error("Error fetching data:", error);
-      });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
+
   return (
     <div class="bg-gray-900">
       <section class="bg-gradient-to-b from-slate-100 to-gray-200 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 text-white" id="about">
@@ -111,10 +118,10 @@ export const Home = () => {
             </span>
 
             <div>
-              <h2 class="text-lg font-bold">The best Economy System</h2>
+              <h2 class="text-lg font-bold">The widest webhook system</h2>
 
               <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                Kotone has an unique economy system, with a lot of minimages, adaptable to your community. This is work in progress, but you can already use it.
+                Kotone has an unique system of auto media posting, a customizable system with cooldowns, pings, categories and more!
               </p>
           </div>
         </div>
@@ -139,21 +146,21 @@ export const Home = () => {
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Times Used
               </dt>
-              <dd id="times-used" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl"></dd>
+              <dd id="times-used" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">{isLoading ? 'Loading' : (statusData ? statusData.used_commands.toLocaleString() : 'Error')}</dd>
             </div>
 
             <div class="flex flex-col rounded-lg bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Total users
               </dt>
-              <dd id="total-users" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl"></dd>
+              <dd id="total-users" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">{isLoading ? 'Loading' : (statusData ? statusData.users.toLocaleString() : 'Error')}</dd>
             </div>
 
             <div class="flex flex-col rounded-lg bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Total Servers
               </dt>
-              <dd id="total-servers" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl"></dd>
+              <dd id="total-servers" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">{isLoading ? 'Loading' : (statusData ? statusData.servers.toLocaleString() : 'Error')}</dd>
             </div>
           </dl>
         </div>

@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
     
           <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
-            Developed by <a href="https://dorikyh.xyz">Dorikyh</a>, with FastAPI & ReactJS.
+            Developed by <a href="https://dorikyh.xyz">Dorikyh</a> using ReactJS.
           </p>
     
           <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
