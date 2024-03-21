@@ -27,7 +27,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div class="dark:bg-gray-900 text-gray-900">
+    <div class="dark:bg-gray-900 text-gray-900 bg-gray-200">
       <section class="bg-gradient-to-b from-slate-100 to-gray-200 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 text-white" id="about">
       <div class="mx-auto px-2 py-16 lg:flex lg:h-screen items-center">
         <div class="mx-auto max-w-3xl text-center">

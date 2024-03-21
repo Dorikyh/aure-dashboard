@@ -60,19 +60,19 @@ export const Status = () => {
   return (
     <div className="dark:bg-gray-900 py-10">
       <div>
-        <h1 className="text-5xl sm:text-7xl font-semibold text-center dark:text-white p-12">Realtime Status</h1>
-        <p className="text-center dark:text-white mx-8">Tecnical information about Kotone in realtime status.</p>
+        <h1 className="text-6xl sm:text-7xl font-semibold text-center dark:text-white p-12">Realtime Status</h1>
+        <p className="text-center dark:text-white mx-8">Tecnical information about Kotone in realtime.</p>
       </div>
       <main>
-        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10 bg-gray-400">
           <h2 className="dark:text-white text-4xl font-semibold">Bot Status</h2>
           <p className="text-3xl font-semibold" style={{ color: botStatus === "Online" ? "#77DD77" : "#ff6961" }}>{botStatus}</p>
         </div>
-        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10 bg-gray-400">
           <h2 className="dark:text-white text-4xl font-semibold">API Status</h2>
           <p className="text-3xl font-semibold" style={{ color: apiStatus === "Online" ? "#77DD77" : "#ff6961" }}>{apiStatus}</p>
         </div>
-        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10">
+        <div className="dark:bg-gray-800 rounded-2xl m-10 p-10 bg-gray-400">
           <h2 className="dark:text-white text-4xl font-semibold">Dashboard Status</h2>
           <p className="text-3xl font-semibold" style={{ color: dashboardStatus === "Online" ? "#77DD77" : "#ff6961" }}>{dashboardStatus}</p>
         </div>

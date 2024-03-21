@@ -3,7 +3,7 @@ import React from 'react';
 function Terms() {
     return (
         <div>
-            <div className='dark:bg-gray-900 px-8 py-12 dark:text-gray-400 sm:px-60 sm:py-14'>
+            <div className='dark:bg-gray-900 px-8 py-12 dark:text-gray-400 sm:px-60 sm:py-14 text-gray-900'>
                 <h1 className='text-7xl font-semibold text-center pb-8 dark:text-white'>ToS & Privacy</h1>
                 <p className='text-center dark:text-gray-400 mb-16'>All you need to know about your privacy, and what or not you can do with Kotone.</p>
                 <div className='mb-16'>
