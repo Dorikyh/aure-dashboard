@@ -11,7 +11,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-gray-900 border-gray-200 py-2.5 dark:bg-gray-900">
+    <nav className="bg-gray-400 border-gray-200 py-2.5 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="#" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Kotone Bot</span>

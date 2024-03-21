@@ -27,7 +27,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div class="bg-gray-900">
+    <div class="dark:bg-gray-900 text-gray-900">
       <section class="bg-gradient-to-b from-slate-100 to-gray-200 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 text-white" id="about">
       <div class="mx-auto px-2 py-16 lg:flex lg:h-screen items-center">
         <div class="mx-auto max-w-3xl text-center">
@@ -36,7 +36,7 @@ export const Home = () => {
           >
             Kotone Discord Bot
           </h1>
-          <p class="w-3/4 sm:w-5/6 mx-auto mt-4 temy-12xt-black dark:text-white">
+          <p class="w-3/4 sm:w-5/6 mx-auto mt-4 temy-12xt-black dark:text-white text-black">
             Kotone has access to millions of images, gifs, videos and audios of all categories for everyone, also with AI generation, for free.
           </p>
           <div class="mt-8 flex flex-wrap justify-center gap-4">

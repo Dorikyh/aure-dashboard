@@ -1,7 +1,6 @@
 // Sidebar.js
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import './SideBar.css';
 
 function Sidebar() {
 
@@ -35,23 +34,29 @@ function Sidebar() {
   };
 
   return (
-    <div className="sidebar">
-      <h2>Dashboard</h2>
+    <div className='bg-gray-800 sm:p-4 text-gray-300 text-2xl text-center font-bold'>
+      <h2 className='text-white sm:text-5xl font-semibold text-center my-4'>Dashboard</h2>
+      <div className='flex p-2'>
+        <img src='/src/kotone.png' alt='Profile Picture' className='rounded-full w-10 h-10 ' />
+        <p className='p-2'>Dorikyh</p>
+      </div>
+
+      
       <ul>
-        <NavLink to="/dashboard/profile" activeClassName="active">
-          <li>Profile</li>
+        <NavLink to="/dashboard/profile">
+          <li className="dark:bg-gray-700 p-2 m-2 rounded-lg">Profile</li>
         </NavLink>
-        <NavLink to="/dashboard/settings" activeClassName="active">
-          <li>Settings</li>
+        <NavLink to="/dashboard/settings">
+          <li className='dark:bg-gray-700 p-2 m-2 rounded-lg'>Settings</li>
         </NavLink>
-        <NavLink to="/dashboard/likes" activeClassName="active">
-          <li>Your Likes</li>
+        <NavLink to="/dashboard/servers">
+          <li className='dark:bg-gray-700 p-2 m-2 rounded-lg'>Your Servers</li>
         </NavLink>
-        <NavLink to="/dashboard/support" activeClassName="active">
-          <li>Support</li>
+        <NavLink to="/dashboard/support">
+          <li className='dark:bg-gray-700 p-2 m-2 rounded-lg'>Support</li>
         </NavLink>
         {/* Agregar el enlace de logout con la función de manejo de clic */}
-        <li onClick={handleLogout}>Logout</li>
+        <li onClick={handleLogout} className='bg-red-900 p-2 m-2 rounded-lg'>Logout</li>
       </ul>
     </div>
   );

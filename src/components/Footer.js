@@ -40,6 +40,14 @@ const Footer = () => {
                 Status
               </a>
             </li>
+            <li>
+              <a
+                class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75 font-bold"
+                href="/support"
+              >
+                Support
+              </a>
+            </li>
     
           </ul>
         </div>
