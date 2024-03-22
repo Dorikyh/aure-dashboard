@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import NotFoundPage from './components/Pages/NotFoundPage';
 import { Login } from './components/Pages/Login'
 import Terms from './components/Pages/Terms'
+import Premium from './components/Pages/Premium'
 import './App.css';
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
           <Route path="/commands" element={<Commands />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/profile" element={<Profile />} />
+          <Route path="/dashboard/profile"element={<Profile />} />
+          <Route path="/premium" element={<Premium />} />
           <Route path="/terms" element={<Terms />} />
           {/* Ruta para manejar el error 404 */}
           <Route path="*" element={<NotFoundPage />} />
