@@ -3,55 +3,36 @@ import React from 'react';
 const Footer = () => {
     return (
 
-        <footer class="bg-gray-300 dark:bg-gray-800">
-        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-          <div class="flex justify-center text-teal-600 dark:text-teal-300">
-          
-          </div>
-    
-          <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
-            Developed by <a href="https://dorikyh.xyz">Dorikyh</a> using ReactJS.
-          </p>
-    
-          <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75 font-bold"
-                href="/"
-              >
-                Home
-              </a>
-            </li>
-    
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75 font-bold"
-                href="/terms"
-              >
-                Terms
-              </a>
-            </li>
-    
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75 font-bold"
-                href="/status"
-              >
-                Status
-              </a>
-            </li>
-            <li>
-              <a
-                class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75 font-bold"
-                href="/support"
-              >
-                Support
-              </a>
-            </li>
-    
-          </ul>
+
+
+<footer class="bg-white shadow dark:bg-gray-800 ">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://kotone.tech/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://kotone.tech/kotone.png" class="h-8" alt="Kotone Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kotone</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="/" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="/terms" class="hover:underline me-4 md:me-6">Terms</a>
+                </li>
+                <li>
+                    <a href="/status" class="hover:underline me-4 md:me-6">Status</a>
+                </li>
+                <li>
+                    <a href="/dashboard" class="hover:underline">Dashboard</a>
+                </li>
+            </ul>
         </div>
-      </footer>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://kotone.tech/" class="hover:underline">Dorikyh</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
+
     );
 };
 
