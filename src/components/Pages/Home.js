@@ -29,7 +29,7 @@ export const Home = () => {
   return (
     <div class="dark:bg-gray-900 text-gray-900 bg-gray-200">
       <section class="bg-gradient-to-b from-slate-100 to-gray-200 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 text-white" id="about">
-      <div class="mx-auto px-2 py-16 lg:flex lg:h-screen items-center">
+      <div class="lg:flex lg:h-screen items-center py-24">
         <div class="mx-auto max-w-3xl text-center">
           <h1
             className="bg-gradient-to-r dark:from-indigo-100 dark:to-indigo-500 from-indigo-400 to-indigo-700 bg-clip-text text-6xl font-extrabold text-transparent sm:text-7xl"
@@ -128,11 +128,11 @@ export const Home = () => {
       </div>
       </section>
 
-      <section class="mx-6 sm:mx-14 pb-16" id="stats">
+      <section class="mx-6 sm:mx-14 pb-12 sm:pt-12" id="stats">
         <div class="mx-auto max-w-screen-xl py-12">
           <div class="mx-auto max-w-3xl text-center">
             <h2 class="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold">
-              Trusted by thousands of users and communities
+              Trusted by thousands of communities
             </h2>
 
             <p class="mt-4 text-gray-500 dark:text-gray-400">
@@ -140,23 +140,23 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div class="mt-8 sm:mt-12">
+        <div class="mt-0">
           <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div class="flex flex-col rounded-lg bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
+            <div class="flex flex-col rounded-xl bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Times Used
               </dt>
               <dd id="times-used" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">{isLoading ? 'Loading' : (statusData ? statusData.used_commands.toLocaleString() : 'Error')}</dd>
             </div>
 
-            <div class="flex flex-col rounded-lg bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
+            <div class="flex flex-col rounded-xl bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Total users
               </dt>
               <dd id="total-users" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">{isLoading ? 'Loading' : (statusData ? statusData.users.toLocaleString() : 'Error')}</dd>
             </div>
 
-            <div class="flex flex-col rounded-lg bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
+            <div class="flex flex-col rounded-xl bg-indigo-100 px-4 py-8 text-center dark:bg-gray-800">
               <dt class="order-last text-lg font-medium text-gray-500 dark:text-white/75">
                 Total Servers
               </dt>

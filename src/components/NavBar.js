@@ -14,7 +14,7 @@ function NavBar() {
     <nav className="bg-gray-300 border-gray-200 py-2.5 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="/" className="flex items-center">
-        <img src="https://kotone.tech/kotone.png" class="h-8 mr-2" alt="Kotone Logo" />
+        <img src="/kotone.png" class="h-8 mr-2" alt="Kotone Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Kotone Bot</span>
         </a>
         <div className="flex items-center lg:order-2">
