@@ -47,7 +47,7 @@ export const Status = () => {
         }
       } catch (error) {
         console.error("Error fetching Website status:", error);
-        setWebStatus("Offline");
+        setWebStatus("Offline"); 
       }
     };
 
