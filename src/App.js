@@ -12,12 +12,14 @@ import { Login } from './components/Pages/Login'
 import Terms from './components/Pages/Terms'
 import Premium from './components/Pages/Premium'
 import './App.css';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <Router>
       <NavBar />
       <div className="pages">
+        <Analytics id="G-4ZQZQZQZQZ" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/status" element={<Status />} />
