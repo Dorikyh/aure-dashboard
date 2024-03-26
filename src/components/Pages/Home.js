@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import FAQ from "../FAQ";
 
 
 export const Home = () => {
@@ -164,6 +164,19 @@ export const Home = () => {
             </div>
           </dl>
         </div>
+      </section>
+      <section className="sm:px-12 sm:py-10 py-4 px-6">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold">
+            Frequently Asked Questions
+          </h2>
+            
+            <p class="mt-4 text-gray-500 dark:text-gray-400 sm:pb-8 pb-4">
+              Here are some of the most common questions about Kotone.
+            </p>
+        </div>
+        <FAQ />
+
       </section>
     </div>
   );
