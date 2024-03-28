@@ -3,7 +3,7 @@ import React from 'react';
 const FAQ = () => {
     return (
 <div class="space-y-4">
-  <details class="group rounded-lg bg-gray-50 dark:bg-gray-600 p-6 [&_summary::-webkit-details-marker]:hidden" open>
+  <details class="group rounded-lg bg-gray-50 dark:bg-gray-700 p-6 [&_summary::-webkit-details-marker]:hidden" open>
     <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
       <h2 class="text-2xl font-semibold dark:text-gray-200">Is Kotone a good bot for my server?</h2>
 
@@ -45,7 +45,7 @@ const FAQ = () => {
     </p>
   </details>
 
-  <details class="group rounded-lg bg-gray-50 p-6 dark:bg-gray-600 [&_summary::-webkit-details-marker]:hidden">
+  <details class="group rounded-lg bg-gray-50 p-6 dark:bg-gray-700 [&_summary::-webkit-details-marker]:hidden">
     <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
       <h2 class="text-2xl font-semibold dark:text-gray-200">Why Kotone is not working well?</h2>
 
