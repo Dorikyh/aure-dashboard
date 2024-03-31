@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <div className="pages">
+      <div className="dark:bg-gray-900">
         <Analytics id="G-4ZQZQZQZQZ" />
         <SpeedInsights id="G-4ZQZQZQZQZ" />
         <Routes>

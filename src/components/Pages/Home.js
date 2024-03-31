@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FAQ from "../FAQ";
-
+import { Heart, Database, Send, Image } from "react-feather";
 
 export const Home = () => {
   const [statusData, setStatusData] = useState(null);
@@ -71,7 +71,7 @@ export const Home = () => {
         <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-2">
           <div class="flex items-start gap-4">
             <span class="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
-                <i class="fa-solid fa-image"></i>
+            <Database size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
             
 
@@ -86,7 +86,7 @@ export const Home = () => {
 
           <div class="flex items-start gap-4">
             <span class="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <Image size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 
             <div>
@@ -99,8 +99,8 @@ export const Home = () => {
           </div>
 
           <div class="flex items-start gap-4">
-            <span class="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
-              <i class="fa-solid fa-heart"></i>
+          <span class="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
+              <Heart size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 
             <div>
@@ -114,7 +114,7 @@ export const Home = () => {
 
           <div class="flex items-start gap-4">
             <span class="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
-              <i class="fa-solid fa-money-bill-wave"></i>
+            <Send size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 
             <div>
