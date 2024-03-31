@@ -32,6 +32,7 @@ function Profile() {
 
     // Cleanup function to remove event listener
     return () => window.removeEventListener('resize', handleResize);
+
   }, []);
 
   return (

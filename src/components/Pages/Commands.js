@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommandCards from "../CommandCards.js";
 
 
 const Commands = () => {
+  useEffect(() => {
+    document.title = "Commands - Kotone";
+  }, []);
   return (
     <div>
       <div className="dark:bg-gray-900 py-12">

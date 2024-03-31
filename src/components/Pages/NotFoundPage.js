@@ -1,7 +1,10 @@
 // NotFoundPage.js
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function NotFoundPage() {
+  useEffect (() => {
+    document.title = "Error 404 - Kotone"
+  }, [])
   return (
     <div>
         <div className='dark:bg-gray-900 p-12 sm:p-16'>

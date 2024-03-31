@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Premium() {
+    useEffect (() => {
+        document.title = "Premium - Kotone"
+    }, [])
     return (
         <div>
             <div className='dark:bg-gray-900 px-8 py-12 dark:text-gray-400 sm:px-60 sm:py-14 text-gray-900'>

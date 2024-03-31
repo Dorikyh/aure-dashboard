@@ -55,6 +55,9 @@ export const Status = () => {
     fetchBotStatus();
     fetchApiStatus();
     fetchWebStatus();
+
+    // Cambia el titulo de la pagina
+    document.title = "Status - Kotone"
   }, []);
 
   return (
