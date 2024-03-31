@@ -36,14 +36,14 @@ const CommandCards = () => {
           placeholder="Search commands"
           value={searchQuery}
           onChange={handleSearchInputChange}
-          className="dark:bg-gray-600 font-semibold dark:text-white text-black rounded-md p-2 text-center sm:px-12 px-6"
+          className="dark:bg-gray-600 font-semibold dark:text-white text-black bg-gray-300 rounded-md p-2 text-center sm:px-12 px-6"
         />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 m-4">
         {filteredCommands.map((command, index) => (
-          <div key={index} className="dark:bg-gray-700 sm:m-4 m-2 p-4 rounded-xl bg-gray-400">
-            <h3 className="dark:text-white sm:text-2xl font-semibold text-black">/{command.name}</h3>
-            <p className="dark:text-gray-300 text-gray-100">{command.description}</p>
+          <div key={index} className="dark:bg-gray-700 sm:m-4 m-2 p-4 rounded-xl bg-gray-200">
+            <h3 className="dark:text-white sm:text-2xl text-xl font-semibold text-gray-800">/{command.name}</h3>
+            <p className="dark:text-gray-300 text-gray-700">{command.description}</p>
           </div>
         ))}
       </div>

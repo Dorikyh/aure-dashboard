@@ -64,7 +64,7 @@ export const Status = () => {
       </div>
       <main className="flex flex-col md:flex-row">
         <div>
-          <div className="dark:bg-gray-800 rounded-2xl m-8 p-10 bg-gray-400">
+          <div className="dark:bg-gray-800 rounded-2xl m-8 p-10 bg-gray-200">
             {apiStatus === "Online" ? (
               <div className="text-center">
                 <CheckCircle size={100} color="#77DD77" className="m-auto mb-4" />
@@ -86,22 +86,22 @@ export const Status = () => {
         </div>
         <div className="w-full md:w-1/2">
           {/* Contenido para la primera columna */}
-          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-400">
+          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Discord Bot</h2>
             <p className="text-3xl font-semibold" style={{ color: botStatus === "Online" ? "#77DD77" : "#ff6961" }}>{botStatus}</p>
           </div>
-          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-400">
+          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Database</h2>
             <p className="text-3xl font-semibold" style={{ color: apiStatus === "Online" ? "#77DD77" : "#ff6961" }}>{apiStatus}</p>
           </div>
         </div>
         <div className="w-full md:w-1/2">
           {/* Contenido para la segunda columna */}
-          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-400">
+          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Dashboard </h2>
             <p className="text-3xl font-semibold" style={{ color: dashboardStatus === "Online" ? "#77DD77" : "#ff6961" }}>{dashboardStatus}</p>
           </div>
-          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-400">
+          <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Auto Post </h2>
             <p className="text-3xl font-semibold" style={{ color: dashboardStatus === "Online" ? "#77DD77" : "#ff6961" }}>{dashboardStatus}</p>
           </div>
