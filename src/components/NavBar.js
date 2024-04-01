@@ -11,7 +11,7 @@ function NavBar() {
 
 
   return (
-    <nav className="bg-gray-300 border-gray-200 py-2.5 dark:bg-gray-900">
+    <nav className="bg-gray-300 border-gray-200 py-2.5 dark:bg-gray-900" style={{ position: "sticky", top: 0, zIndex: 100 }}>
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="/" className="flex items-center">
         <img src="/kotone.png" class="h-8 mr-2" alt="Kotone Logo" />
@@ -24,7 +24,7 @@ function NavBar() {
 
           <a
             href="https://kotone.tech"
-            className="font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800"
+            className="font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2 sm:mr-2 lg:mr-0 dark:bg-indigo-500 dark:hover:bg-indigo-600 focus:outline-none dark:focus:ring-indigo-800"
           >
             Invite Bot
           </a>

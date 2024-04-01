@@ -36,24 +36,30 @@ export const Home = () => {
           >
             Kotone Discord Bot
           </h1>
+          
           <p class="w-3/4 sm:w-5/6 mx-auto mt-4 temy-12xt-black dark:text-white text-black">
             Kotone has access to millions of images, gifs, videos and audios of all categories for everyone, also with AI generation, for free.
           </p>
-          <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              class="block rounded-md bg-indigo-500 px-6 py-3 text-base font-medium text-white transition hover:bg-indigo-500 dark:hover:bg-indigo-400"
-              href="https://discord.com/oauth2/authorize?&client_id=889540062956634164&scope=bot&permissions=2147862592"
-            >
-              Invite Kotone
-            </a>
+          <div class="mx-20 pt-8 sm:flex sm:flex-wrap sm:justify-center gap-4">
+            <div class="mb-4 sm:mb-0">
+              <a
+                class="rounded-md bg-indigo-500 px-6 py-3 text-base font-medium text-white transition hover:bg-indigo-500 dark:hover:bg-indigo-400 block w-full sm:inline-block"
+                href="https://discord.com/oauth2/authorize?&client_id=889540062956634164&scope=bot&permissions=2147862592"
+              >
+                Invite Kotone
+              </a>
+            </div>
 
-            <a
-              class="rounded-md bg-gray-100 px-6 py-3 text-base font-medium text-indigo-500 transition hover:text-indigo-800/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 sm:block"
-              href="https://discord.gg/appnkdReFk"
-            >
-              Support Server
-            </a>
-          </div>
+            <div>
+              <a
+                class="rounded-md bg-gray-100 px-6 py-3 text-base font-medium text-indigo-500 transition hover:text-indigo-800/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 block w-full sm:inline-block"
+                href="https://discord.gg/appnkdReFk"
+              >
+                Support Server
+              </a>
+            </div>
+        </div>
+
         </div>
       </div>
       </section>
