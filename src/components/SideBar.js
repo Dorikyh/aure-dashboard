@@ -1,30 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    // Verificar el token JWT al cargar el componente Sidebar
-    const verifyToken = async () => {
-      try {
-        const response = await fetch('https://api.kotone.tech/user/info', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
-          }
-        });
-
-        if (response.status === 401 || response.status === 403) {
-          // Si la respuesta es 401 o 403, redirige al usuario a la página de inicio de sesión
-          window.location.href = '/login';
-        }
-      } catch (error) {
-        console.error('Error al verificar el token:', error);
-      }
-    };
-
-    verifyToken();
-  }, []);
 
   const handleLogout = () => {
     // Eliminar el token JWT del almacenamiento
@@ -50,14 +29,14 @@ function Sidebar() {
 
         
         <ul className='sm:pb-0 pb-4'>
-          <NavLink to="/dashboard/profile">
+          <NavLink to="/dashboard/">
             <li className="dark:bg-gray-700 p-2 sm:m-2 m-4 rounded-lg">Profile</li>
           </NavLink>
           <NavLink to="/dashboard/settings">
             <li className='dark:bg-gray-700 p-2 sm:m-2 m-4 rounded-lg'>Settings</li>
           </NavLink>
-          <NavLink to="/dashboard/servers">
-            <li className='dark:bg-gray-700 p-2 sm:m-2 m-4 rounded-lg'>Your Servers</li>
+          <NavLink to="/dashboard/webhooks">
+            <li className='dark:bg-gray-700 p-2 sm:m-2 m-4 rounded-lg'>Webhooks</li>
           </NavLink>
           <NavLink to="/dashboard/support">
             <li className='dark:bg-gray-700 p-2 sm:m-2 m-4 rounded-lg'>Support</li>

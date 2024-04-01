@@ -3,7 +3,17 @@ import React, { useEffect } from "react";
 export const Login = () => {
   useEffect(() => {
     document.title = "Login - Kotone";
+    
+    // Obtener el parámetro 'token' de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    // Verificar si se ha pasado un token y guardarlo en localStorage
+    if(token) {
+      localStorage.setItem('jwtToken', token);
+    }
   }, []);
+
   return (
     <div className="dark:bg-gray-900 sm:p-20 sm:px-80">
       <div className="bg-gray-800 p-12 rounded-2xl flex flex-col items-center">

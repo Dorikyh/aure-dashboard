@@ -13,7 +13,7 @@ function Profile() {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${jwtToken}`
-        }
+        } 
       })
       .then(response => response.json())
       .then(data => setUserInfo(data))
