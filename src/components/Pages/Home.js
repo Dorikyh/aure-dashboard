@@ -31,19 +31,10 @@ export const Home = () => {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
-  const animatedTimesUsed = useSpring({ 
-    number: parseInt(stats.timesUsed), // Convierte la cadena en un número entero
-    from: { number: 0 } 
-  });
-  const animatedTotalUsers = useSpring({ 
-    number: parseInt(stats.totalUsers), // Convierte la cadena en un número entero
-    from: { number: 0 } 
-  });
-  const animatedTotalServers = useSpring({ 
-    number: parseInt(stats.totalServers), // Convierte la cadena en un número entero
-    from: { number: 0 } 
-  });
-  
+  const animatedTimesUsed = useSpring({ number: stats.timesUsed, from: { number: 0 } });
+  const animatedTotalUsers = useSpring({ number: stats.totalUsers, from: { number: 0 } });
+  const animatedTotalServers = useSpring({ number: stats.totalServers, from: { number: 0 } });
+
 
   return (
     <div className="dark:bg-gray-900 text-gray-900 bg-gray-200">
@@ -173,7 +164,7 @@ export const Home = () => {
               Times Used
             </dt>
             <dd id="times-used" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-
+              <animated.div>{animatedTimesUsed.number.to(n => n.toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
@@ -182,7 +173,7 @@ export const Home = () => {
               Total Users
             </dt>
             <dd id="total-users" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-
+              <animated.div>{animatedTotalUsers.number.to(n => n.toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
@@ -191,9 +182,7 @@ export const Home = () => {
               Total Servers
             </dt>
             <dd id="total-servers" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-            <animated.div>
-              {animatedTotalServers.animatedTotalServers.interpolate(animatedTotalServers => Math.floor(animatedTotalServers)).toLocaleString('en-US')}
-            </animated.div>
+              <animated.div>{animatedTotalServers.number.to(n => n.toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
