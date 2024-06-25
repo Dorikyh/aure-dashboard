@@ -23,7 +23,7 @@ function Sidebar() {
       <div className={`bg-gray-800 sm:p-4 text-gray-300 text-2xl text-center font-bold ${isOpen ? 'block' : 'hidden'} sm:block`}>
         <h2 className='text-white text-5xl font-semibold text-center py-4'>Dashboard</h2>
         <div className="p-2 flex">
-          <img src='/kotone.png' alt='Profile Picture' className='rounded-full w-10 h-10 ' />
+          <img src='/kotone.png' alt='Profile' className='rounded-full w-10 h-10 ' />
           <p className='p-2'>Dorikyh</p>
         </div>
 
