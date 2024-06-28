@@ -11,6 +11,9 @@ export const Login = () => {
     // Verificar si se ha pasado un token y guardarlo en localStorage
     if(token) {
       localStorage.setItem('jwtToken', token);
+
+      // Guardar el token en los headers por defecto para todas las peticiones fetch
+      fetch.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     }
   }, []);
 
@@ -25,4 +28,4 @@ export const Login = () => {
   );
 };
 
-export default Login();
+export default Login;

@@ -8,18 +8,18 @@ export const Home = () => {
   const [stats, setStats] = useState({
     timesUsed: 0,
     totalUsers: 0,
-    totalServers: 0,
+    totalSent: 0,
   });
 
   useEffect(() => {
     const fetchStats = () => {
-      fetch("http://23.27.211.92:25247/stats")
+      fetch("https://api.dorikyh.pw/bot/stats")
         .then(response => response.json())
         .then(data => {
           setStats({
             timesUsed: data.used_commands,
             totalUsers: data.users,
-            totalServers: data.sent_media,
+            totalSent: data.sent_media,
           });
         })
         .catch(error => console.error("Error fetching stats:", error));
@@ -33,7 +33,7 @@ export const Home = () => {
 
   const animatedTimesUsed = useSpring({ number: stats.timesUsed, from: { number: 0 } });
   const animatedTotalUsers = useSpring({ number: stats.totalUsers, from: { number: 0 } });
-  const animatedTotalServers = useSpring({ number: stats.totalServers, from: { number: 0 } });
+  const animatedTotalSent = useSpring({ number: stats.totalSent, from: { number: 0 } });
 
 
   return (
@@ -152,7 +152,7 @@ export const Home = () => {
             </h2>
 
             <p className="mt-4 text-gray-500 dark:text-gray-400">
-              With more than 3 months of continuous development we have the following statistics:
+              The following statistics updates in real-time every five seconds:
             </p>
           </div>
         </div>
@@ -170,19 +170,19 @@ export const Home = () => {
 
           <div className="flex flex-col rounded-xl bg-indigo-200 px-4 py-8 text-center dark:bg-gray-800">
             <dt className="order-last text-lg font-medium text-gray-500 dark:text-white/75">
+              Total Sent media via webhooks
+            </dt>
+            <dd id="total-servers" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
+              <animated.div>{animatedTotalSent.number.to(n => n.toLocaleString('en-US'))}</animated.div>
+            </dd>
+          </div>
+          
+          <div className="flex flex-col rounded-xl bg-indigo-200 px-4 py-8 text-center dark:bg-gray-800">
+            <dt className="order-last text-lg font-medium text-gray-500 dark:text-white/75">
               Total Users
             </dt>
             <dd id="total-users" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
               <animated.div>{animatedTotalUsers.number.to(n => n.toLocaleString('en-US'))}</animated.div>
-            </dd>
-          </div>
-
-          <div className="flex flex-col rounded-xl bg-indigo-200 px-4 py-8 text-center dark:bg-gray-800">
-            <dt className="order-last text-lg font-medium text-gray-500 dark:text-white/75">
-              Total Servers
-            </dt>
-            <dd id="total-servers" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-              <animated.div>{animatedTotalServers.number.to(n => n.toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
