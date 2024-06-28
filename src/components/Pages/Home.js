@@ -3,7 +3,6 @@ import FAQ from "../FAQ";
 import { Heart, Database, Send, Image } from "react-feather";
 import { useSpring, animated } from '@react-spring/web';
 
-
 export const Home = () => {
   const [stats, setStats] = useState({
     timesUsed: 0,
@@ -34,7 +33,6 @@ export const Home = () => {
   const animatedTimesUsed = useSpring({ number: stats.timesUsed, from: { number: 0 } });
   const animatedTotalUsers = useSpring({ number: stats.totalUsers, from: { number: 0 } });
   const animatedTotalSent = useSpring({ number: stats.totalSent, from: { number: 0 } });
-
 
   return (
     <div className="dark:bg-gray-900 text-gray-900 bg-gray-200">
@@ -148,7 +146,7 @@ export const Home = () => {
         <div className="mx-auto max-w-screen-xl py-12">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-5xl text-gray-900 dark:text-white sm:text-6xl font-extrabold">
-              Trusted by everyone
+              Trusted by <span className="bg-gradient-to-br from-blue-100 to-indigo-500 bg-clip-text text-transparent text-gradient-to-r dark:from-indigo-100 dark:to-indigo-500 font-extrabold">@everyone</span>
             </h2>
 
             <p className="mt-4 text-gray-500 dark:text-gray-400">
@@ -164,16 +162,16 @@ export const Home = () => {
               Times Used
             </dt>
             <dd id="times-used" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-              <animated.div>{animatedTimesUsed.number.to(n => n.toLocaleString('en-US'))}</animated.div>
+              <animated.div>{animatedTimesUsed.number.to(n => Math.round(n).toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
           <div className="flex flex-col rounded-xl bg-indigo-200 px-4 py-8 text-center dark:bg-gray-800">
             <dt className="order-last text-lg font-medium text-gray-500 dark:text-white/75">
-              Total Sent media via webhooks
+              Total media sent
             </dt>
             <dd id="total-servers" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-              <animated.div>{animatedTotalSent.number.to(n => n.toLocaleString('en-US'))}</animated.div>
+              <animated.div>{animatedTotalSent.number.to(n => Math.round(n).toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
           
@@ -182,7 +180,7 @@ export const Home = () => {
               Total Users
             </dt>
             <dd id="total-users" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-              <animated.div>{animatedTotalUsers.number.to(n => n.toLocaleString('en-US'))}</animated.div>
+              <animated.div>{animatedTotalUsers.number.to(n => Math.round(n).toLocaleString('en-US'))}</animated.div>
             </dd>
           </div>
 
@@ -205,4 +203,4 @@ export const Home = () => {
   );
 };
 
-export default Home;
+export default Home; 
