@@ -1,7 +1,7 @@
 // NotFoundPage.js
 import React, { useEffect } from 'react';
 
-function NotFoundPage() {
+export default function NotFoundPage() {
   useEffect (() => {
     document.title = "Error 404 - Kotone"
   }, [])
@@ -15,5 +15,3 @@ function NotFoundPage() {
     </div>
   );
 }
-
-export default NotFoundPage;

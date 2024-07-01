@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FAQ from "../FAQ";
 import { Heart, Database, Send, Image } from "react-feather";
 import { useSpring, animated } from '@react-spring/web';
+import SimpleSlider from "../SimpleSlider";
 
 export const Home = () => {
   const [stats, setStats] = useState({
@@ -186,6 +187,18 @@ export const Home = () => {
 
           </dl>
         </div>
+      </section>
+      <section className="sm:px-12 sm:py-10 py-4 px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold">
+            Popular servers using Kotone
+          </h2>
+            
+            <p className="mt-4 text-gray-500 dark:text-gray-400 sm:pb-8 pb-4">
+              Here are some of the most common questions about Kotone.
+            </p>
+        </div>
+        <SimpleSlider />
       </section>
       <section className="sm:px-12 sm:py-10 py-4 px-6">
         <div className="mx-auto max-w-3xl text-center">
