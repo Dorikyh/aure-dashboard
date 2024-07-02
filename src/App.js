@@ -21,7 +21,7 @@ const NotFoundPage = pages['/404'];
 function App() {
   return (
     <Router>
-      <div className="dark:bg-gray-800 flex flex-col min-h-screen">
+      <div className="bg-gray-200 text-gray-800 dark:text-gray-200 dark:bg-gray-800 flex flex-col min-h-screen">
         <NavBar />
         <div className="dark:bg-gray-900 flex flex-col md:flex-row md:justify-center md:space-x-8 px-4">
           {/* Columna izquierda vacía para pantalla grande */}

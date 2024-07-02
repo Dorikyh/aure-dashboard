@@ -60,7 +60,7 @@ export const Home = () => {
 
 
   return (
-    <div className="dark:bg-gray-900 text-gray-900 bg-gray-200">
+    <div className="dark:bg-gray-900 text-gray-900">
       <section className="dark:text-white" id="about">
         <div className="lg:flex lg:h-screen items-center py-24">
           <div className="mx-auto max-w-3xl text-center">
@@ -85,7 +85,7 @@ export const Home = () => {
 
               <div>
                 <a
-                  className="rounded-md bg-gray-100 px-6 py-3 text-base font-medium text-indigo-500 transition hover:text-indigo-800/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 block w-full sm:inline-block"
+                  className="rounded-md bg-gray-300 px-6 py-3 text-base font-medium text-indigo-500 transition hover:text-indigo-800/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 block w-full sm:inline-block"
                   href="https://discord.gg/appnkdReFk"
                 >
                   Support Server
@@ -109,7 +109,7 @@ export const Home = () => {
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-2">
           <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
+            <span className="shrink-0 rounded-lg bg-gray-300 dark:bg-gray-800 p-4">
               <Database size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
             
@@ -124,7 +124,7 @@ export const Home = () => {
           </div>
 
           <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
+            <span className="shrink-0 rounded-lg bg-gray-300 dark:bg-gray-800 p-4">
               <Image size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 
@@ -138,7 +138,7 @@ export const Home = () => {
           </div>
 
           <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
+          <span className="shrink-0 rounded-lg bg-gray-300 dark:bg-gray-800 p-4">
               <Heart size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 
@@ -149,10 +149,10 @@ export const Home = () => {
                 When you are using commands with personalized responses, or images, you can Like them and access them later filering by category.
               </p>
             </div>
-          </div>
+          </div> 
 
           <div className="flex items-start gap-4">
-            <span className="shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 p-4">
+            <span className="shrink-0 rounded-lg bg-gray-300 dark:bg-gray-800 p-4">
             <Send size={20} color="#FFFFFF" className="m-auto" strokeWidth={3}/>
             </span>
 

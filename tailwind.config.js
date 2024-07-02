@@ -3,14 +3,15 @@ module.exports = {
   content: [
     './src/**/*.html',
     './src/**/*.js',
-    // Add more file paths or glob patterns here
+    // Añadir más rutas de archivos o patrones globales aquí si es necesario
   ],
+  darkMode: 'class', // Especifica que quieres usar la estrategia de clase para el modo oscuro
   theme: {
     extend: {
-      // Add your custom theme configurations here
+      // Agrega tus configuraciones de tema personalizadas aquí si las tienes
     },
   },
   plugins: [
-    // Add your additional plugins here
+    // Agrega tus plugins adicionales aquí si es necesario
   ],
 };

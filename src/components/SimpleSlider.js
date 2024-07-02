@@ -57,11 +57,11 @@ export default function SimpleSlider() {
       <Slider {...settings}>
         {servers.map((server, index) => (
           <div key={index}>
-            <div className="mx-2 bg-gray-800 rounded-xl">
+            <div className="mx-2 bg-gray-300 dark:bg-gray-800 rounded-xl">
               <div className="flex flex-col items-center justify-center p-4">
                 <img src={server.icon} alt={server.name} className="rounded-full w-20 h-20" />
-                <h3 className="text-white text-lg font-semibold mt-2">{server.name.slice(0, 18)}</h3>
-                <p className="text-gray-400 text-lg mt-1">{server.member_count.toLocaleString()} members</p>
+                <h3 className="dark:text-white text-lg font-semibold mt-2">{server.name.slice(0, 18)}</h3>
+                <p className="dark:text-gray-400 text-lg mt-1">{server.member_count.toLocaleString()} members</p>
               </div>
             </div>
           </div>
