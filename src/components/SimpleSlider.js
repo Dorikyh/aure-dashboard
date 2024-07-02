@@ -21,9 +21,10 @@ export default function SimpleSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    autoPlay: true,
     autoSlide: true,
   
     responsive: [
@@ -60,7 +61,7 @@ export default function SimpleSlider() {
               <div className="flex flex-col items-center justify-center p-4">
                 <img src={server.icon} alt={server.name} className="rounded-full w-20 h-20" />
                 <h3 className="text-white text-lg font-semibold mt-2">{server.name.slice(0, 18)}</h3>
-                <p className="text-gray-400 text-sm mt-1">{server.member_count.toLocaleString()} members</p>
+                <p className="text-gray-400 text-lg mt-1">{server.member_count.toLocaleString()} members</p>
               </div>
             </div>
           </div>

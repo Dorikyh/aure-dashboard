@@ -59,19 +59,19 @@ const Status = () => {
   };
 
   return (
-    <div className="dark:bg-gray-900 py-10">
+    <div>
       <div>
-        <h1 className="text-6xl sm:text-7xl font-semibold text-center dark:text-white pt-8 pb-2">Realtime Status</h1>
+        <h1 className="text-6xl sm:text-7xl font-semibold text-center dark:text-white">Realtime Status</h1>
         <p className="text-center dark:text-white">Technical information about Kotone in realtime.</p>
       </div>
-      <main className="flex flex-col md:flex-row">
+      <main className="-col md:flex-row">
         <div>
           <div className="dark:bg-gray-800 rounded-2xl m-8 p-10 bg-gray-200">
             {apiStatus === "Online" ? (
               <div className="text-center">
                 <CheckCircle size={100} color="#77DD77" className="m-auto mb-4" />
                 <div className="w-64 mx-auto">
-                  <h2 className="dark:text-white text-4xl font-semibold mb-2">All good!</h2>
+                  <h2 className="dark:text-white text-4xl font-semibold mb-2">Bot Online!</h2>
                   <p className="text-xl dark:text-gray-400 font-semibold">{formatUptime(uptime)}</p>
                 </div>
               </div>
@@ -86,25 +86,29 @@ const Status = () => {
             )}
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="">
           <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Discord Bot</h2>
             <p className="text-3xl font-semibold" style={{ color: botStatus === "Online" ? "#77DD77" : "#ff6961" }}>{botStatus}</p>
           </div>
+
           <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">API</h2>
             <p className="text-3xl font-semibold" style={{ color: apiStatus === "Online" ? "#77DD77" : "#ff6961" }}>{apiStatus}</p>
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+
+        <div className="">
           <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">Website</h2>
             <p className="text-3xl font-semibold" style={{ color: dashboardStatus === "Online" ? "#77DD77" : "#ff6961" }}>{dashboardStatus}</p>
           </div>
+
           <div className="dark:bg-gray-800 rounded-2xl m-8 p-8 bg-gray-200">
             <h2 className="dark:text-white text-4xl font-semibold">AutoPost</h2>
             <p className="text-3xl font-semibold" style={{ color: apiStatus === "Online" ? "#77DD77" : "#ff6961" }}>{apiStatus}</p>
           </div>
+          
         </div>
       </main>
     </div>

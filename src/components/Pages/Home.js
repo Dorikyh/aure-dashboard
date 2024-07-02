@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FAQ from "../FAQ";
+import FAQItem from "../FAQ";
 import { Heart, Database, Send, Image } from "react-feather";
 import { useSpring, animated } from '@react-spring/web';
 import SimpleSlider from "../SimpleSlider";
+
 
 export const Home = () => {
   const [stats, setStats] = useState({
@@ -26,7 +27,7 @@ export const Home = () => {
     };
 
     fetchStats();
-    const interval = setInterval(fetchStats, 5000);
+    const interval = setInterval(fetchStats, 50000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
@@ -35,9 +36,32 @@ export const Home = () => {
   const animatedTotalUsers = useSpring({ number: stats.totalUsers, from: { number: 0 } });
   const animatedTotalSent = useSpring({ number: stats.totalSent, from: { number: 0 } });
 
+  const formatNumber = (number) => {
+    if (number >= 1000000) {
+      return (number / 1000000).toFixed(1) + 'M';
+    }
+    return number.toLocaleString('en-US');
+  };
+
+  const faqs = [
+    {
+      question: "Kotone is an inappropriate bot?",
+      answer: `Kotone has a large number of different uses and among those are also NSFW functionalities, these functionalities can ONLY be used by users of legal age on 18+ channels, so you don't have to worry about your community being filled with inappropriate content.`,
+    },
+    {
+      question: "What are credits for and how can I obtain them?",
+      answer: `Credits are the global economy of Kotone, with this you can have access to special features such as: generation of high resolution images or higher speed AutoPost channels.`,
+    },
+    {
+      question: "How do I disable AutoPost?",
+      answer: `To disable the constant and automatic sending of multimedia on a specific channel, you can go to the channel in question and use the /remove-autopost command. If you do not specify the channel, the channel where you executed the command will be selected.`,
+    },
+  ];
+
+
   return (
     <div className="dark:bg-gray-900 text-gray-900 bg-gray-200">
-      <section className="bg-gradient-to-b from-slate-100 to-gray-200 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 text-white" id="about">
+      <section className="dark:text-white" id="about">
         <div className="lg:flex lg:h-screen items-center py-24">
           <div className="mx-auto max-w-3xl text-center">
             <h1
@@ -46,16 +70,16 @@ export const Home = () => {
               Kotone Discord Bot
             </h1>
             
-            <p className="w-3/4 sm:w-5/6 mx-auto mt-4 temy-12xt-black dark:text-white text-black">
+            <p className="w-3/4 sm:w-5/6 mx-auto mt-4 temy-20xt-black dark:text-white text-black">
               Kotone has access to millions of images, gifs, videos and audios of all categories for everyone, also with AI generation, for free.
             </p>
             <div className="mx-20 pt-8 sm:flex sm:flex-wrap sm:justify-center gap-4">
               <div className="mb-4 sm:mb-0">
                 <a
                   className="rounded-md bg-indigo-500 px-6 py-3 text-base font-medium text-white transition hover:bg-indigo-500 dark:hover:bg-indigo-400 block w-full sm:inline-block"
-                  href="https://discord.com/oauth2/authorize?&client_id=889540062956634164&scope=bot&permissions=2147862592"
+                  href="https://discord.com/oauth2/authorize?client_id=889540062956634164"
                 >
-                  Invite Kotone
+                  Add Kotone
                 </a>
               </div>
 
@@ -73,7 +97,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="dark:text-white text-black lg:mx-24 sm:mx-12 mx-8 mb-16" id="features">
+      <section className="dark:text-white text-black" id="features">
       <div>
         <div>
           <h2 className="text-5xl font-extrabold sm:text-5xl text-center">What makes Kotone <span className="bg-gradient-to-br from-blue-100 to-indigo-500 bg-clip-text text-transparent text-gradient-to-r dark:from-indigo-100 dark:to-indigo-500 font-extrabold">special</span></h2>
@@ -143,7 +167,7 @@ export const Home = () => {
       </div>
       </section>
 
-      <section className="mx-6 sm:mx-14 pb-12 sm:pt-12" id="stats">
+      <section className="my-20" id="stats">
         <div className="mx-auto max-w-screen-xl py-12">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-5xl text-gray-900 dark:text-white sm:text-6xl font-extrabold">
@@ -172,7 +196,7 @@ export const Home = () => {
               Total media sent
             </dt>
             <dd id="total-servers" className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-300 md:text-5xl">
-              <animated.div>{animatedTotalSent.number.to(n => Math.round(n).toLocaleString('en-US'))}</animated.div>
+              <animated.div>{animatedTotalSent.number.to(n => formatNumber(n))}</animated.div>
             </dd>
           </div>
           
@@ -188,7 +212,7 @@ export const Home = () => {
           </dl>
         </div>
       </section>
-      <section className="sm:px-12 sm:py-10 py-4 px-6">
+      <section className="my-20">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold">
             Popular servers using Kotone
@@ -200,20 +224,24 @@ export const Home = () => {
         </div>
         <SimpleSlider />
       </section>
-      <section className="sm:px-12 sm:py-10 py-4 px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold">
+
+
+      <section className="my-20">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl text-gray-900 dark:text-white sm:text-5xl font-extrabold text-center">
             Frequently Asked Questions
           </h2>
             
-            <p className="mt-4 text-gray-500 dark:text-gray-400 sm:pb-8 pb-4">
+            <p className="mt-4 text-gray-500 dark:text-gray-400 sm:pb-8 mb-4 text-center">
               Here are some of the most common questions about Kotone.
             </p>
+            {faqs.map((faq, index) => (
+                <FAQItem key={index} question={faq.question} answer={faq.answer} />
+              ))}
         </div>
-        <FAQ />
       </section>
     </div>
   );
 };
 
-export default Home; 
+export default Home;
